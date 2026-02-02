@@ -7,6 +7,97 @@
     <title>Eat the frog</title>
 </head>
 <body>
-    <div>Eat the frog</div>
+    <div class="toast toast-hidden js-toast" id="toast js-toast"></div>
+  
+  <div class="everything-cont">
+    <div class="everything">
+      <div class="header-div">
+        <div class="header-box">
+          <img class="eat-frog-header" src="../images/eatTheFrogTransparent.png">
+        </div>
+        
+        <h2 class="header">Get it Done. Get it Did</h2>
+      </div>
+      <div class="add-todo-cont">
+        <div class="add-todo-top">       
+          <div class="hide-open-div">
+            <button class="hide-open-button js-hide-button" id="js-hide-button">Hide</button>
+          </div>      
+        </div>
+        <div class="hide-box" id="js-hide-box">
+          <div class="input-div js-input-div" id="input-div js-input-div">
+          <input type="text" class="todo-input js-todo-input" id="js-todo-input" placeholder="what we doing today?"></input>
+          
+            <div class="range-sliders-box" id="js-range-sliders">
+              <div class="tedium-box">
+                <input type="range" class="js-tedium-slider slider" id="js-tedium-slider" value="5" min="1" max="10" />
+                <div class="tedium-title range-font">Tedium: <span class="js-tedium-output"></span></div>
+              </div>
+              <div class="difficulty-box">
+                <input type="range" class="js-difficulty-slider slider" id="js-difficulty-slider" value="5" min="1" max="10" />
+                <div class="difficulty-title range-font">Difficulty: <span class="js-difficulty-output">5</span></div>
+              </div>
+              <div class="time-box">
+                <input type="range" class="js-time-slider slider" id="js-time-slider"value="5" min="1" max="10" />
+                <div class="time-title range-font">Time: <span class="js-time-output">5</span></div>
+              </div>
+              <div>
+                <label>this is my frog</label>
+                <input type="checkbox" class="my-frog js-my-frog" id="js-my-frog">
+              </div>
+            </div>
+          
+            <div class="ratings-box"></div>
+            <button class="add-to-list js-add-to-list">Add to list</button>
+          
+          </div>
+        </div>
+        <div class="order-change-buttons">
+          <button class="frog js-frog" id="js-frog-button">Eat the frog</button>
+          <button class="frog-chase js-frog-chase" id="js-chase-button">Frog with a chaser</button>
+          <button class="snowball js-snowball" id="js-snowball-button">Snow Ball</button>
+          <button class="one-for js-one-for" id="js-one-for-button">One for me, one for them</button>
+          <button class="hump js-hump" id="js-hump-button">Hump</button>
+          <button class="my-as-added js-as-added" id="js-as-added-button">As added</button>
+        </div>
+
+        <div class="edit-box" id="js-edit-box">
+          <div class="edit-input-div js-edit-input-div" id="edit-input-div js-edit-input-div">
+          <div>Edit</div>
+          <div type="text" class="edit-todo-input js-edit-todo-input" id="js-edit-todo-input" contenteditable="true"></div>
+          
+            <div class="edit-range-sliders-box" id="js-edit-range-sliders">
+              <div class="edit-tedium-box">
+                <input type="range" class="js-edit-tedium-slider slider" id="js-edit-tedium-slider" value="5" min="1" max="10" />
+                <div class="edit-tedium-title">tedium: <span class="js-edit-tedium-output" id="js-edit-tedium-output">5</span></div>
+              </div>
+              <div class="edit-difficulty-box">
+                <input type="range" class="js-edit-difficulty-slider slider" id="js-edit-difficulty-slider" value="5" min="1" max="10" />
+                <div class="edit-difficulty-title">difficulty: <span class="js-edit-difficulty-output" id="js-edit-difficulty-output">5</span></div>
+              </div>
+              <div class="edit-time-box">
+                <input type="range" class="js-edit-time-slider slider" id="js-edit-time-slider"value="5" min="1" max="10" />
+                <div clas="edit-time-title">time: <span class="js-edit-time-output" id="js-edit-time-output">5</span></div>
+              </div>
+              <div>
+                <label>this is my frog</label>
+                <input type="checkbox" class="edit-my-frog js-edit-my-frog" id="js-edit-my-frog">
+              </div>
+            </div>
+            <div class="js-secret-box" id="js-secret-box"></div>
+            <div class="edit-ratings-box"></div>
+            <button class="edit-save js-edit-save">Save</button>
+          
+          </div>
+        </div>
+
+        <div class="list-cont">
+          <div class="list-div js-list-div">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="../javaScript/index.js"></script>
 </body>
 </html>

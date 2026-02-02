@@ -5,6 +5,9 @@ A simple to-do list application which can rearrange tasks entered to fit a desir
 
 
 
+What are my assumptions of what is fun etc etc, why that is important for reordering
+
+
 JS file breakdown
 
 
