@@ -1,6 +1,6 @@
 import { currentCart } from './index.js';
 
-// retrieving list from storage with empty storage check
+/* retrieving list from storage with empty storage check */
 
 export function ArrayFromStorage(storage) {
     const listString = localStorage.getItem(storage);
@@ -15,7 +15,7 @@ export function ArrayFromStorage(storage) {
     
 }
 
-// checking for frog
+/* checking for frog */
 
 export function checkingForFrog() {
     console.log("frog check!")
@@ -33,7 +33,9 @@ export function checkingForFrog() {
     return frogNum
 }
 
-// Creating a cart object
+/* Creating a cart object */
+
+// formatting and saving input
 
 export function createCartItem() {
     const toDoText = document.getElementById('js-todo-input').value;
@@ -50,11 +52,19 @@ export function createCartItem() {
     console.log(ArrayFromStorage('standardCart'));
 }
 
+// creating ID
+
+export function randomIdMaker() {
+    return Math.floor(Math.random() * (999999 - 100000) + 100000);
+}
+
+/* Editing Array (Edit, Check, delete) */
+
+// formatting and saving edited input
+
 export function saveEditCart() {
 
     let  frogCode = checkingForFrog();
-
-    
 
     const newTodo = document.getElementById('js-edit-todo-input').innerHTML;
     console.log(newTodo)
@@ -87,9 +97,47 @@ export function saveEditCart() {
 
     localStorage.setItem('standardCart', JSON.stringify(currentCart));
 };
-        
 
-// Data check functions (how boring, how hard, how quick)
+// check function
+
+export function checkDone(toBeChecked) {
+
+    const doneIdNum = toBeChecked;
+
+    currentCart.forEach((item) => {
+        if (doneIdNum == item.idNum) {
+            item.completed = 1 - item.completed;
+            
+            
+            localStorage.setItem('standardCart', JSON.stringify(currentCart));
+        }
+    });
+};
+
+// remove function
+
+export function removeItem(toBeRemoved) {
+    const removeIdNum = toBeRemoved;
+
+    let newCart = [];
+
+    currentCart.forEach((item) => {
+        if (removeIdNum != item.idNum) {
+            newCart.push(item);
+
+            localStorage.setItem('standardCart', JSON.stringify(newCart));
+        } else if (removeIdNum == item.idNum && currentCart.length == 1) {
+            newCart = [];
+
+            localStorage.setItem('standardCart', JSON.stringify(newCart));
+        };
+    });
+
+};
+
+
+/* Data check functions (how boring, how hard, how quick) 
+for potentially using to displaying to user */
 
 export function howBoring(arrayNum) {
 
@@ -147,50 +195,3 @@ export function howQuick(arrayNum) {
         return ("an unbareable slog");
     };
 };
-
-
-// creating ID
-
-export function randomIdMaker() {
-    return Math.floor(Math.random() * (999999 - 100000) + 100000);
-    
-}
-
-
-// Editing Array (Check, delete, edit)
-
-
-export function checkDone(toBeChecked) {
-
-    const doneIdNum = toBeChecked;
-
-    currentCart.forEach((item) => {
-        if (doneIdNum == item.idNum) {
-            item.completed = 1 - item.completed;
-            
-            
-            localStorage.setItem('standardCart', JSON.stringify(currentCart));
-        }
-    });
-};
-
-
-export function removeItem(toBeRemoved) {
-    const removeIdNum = toBeRemoved;
-
-    let newCart = [];
-
-    currentCart.forEach((item) => {
-        if (removeIdNum != item.idNum) {
-            newCart.push(item);
-
-            localStorage.setItem('standardCart', JSON.stringify(newCart));
-        } else if (removeIdNum == item.idNum && currentCart.length == 1) {
-            newCart = [];
-
-            localStorage.setItem('standardCart', JSON.stringify(newCart));
-        };
-    });
-
-};
-

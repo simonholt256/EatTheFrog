@@ -10,4 +10,5 @@ What are my assumptions of what is fun etc etc, why that is important for reorde
 
 JS file breakdown
 
-
+Improvements that could be made:
+- most of the JS could be written in a more condensed way. the if statements for example, and there in likely areas that could be more concise in the list order rearrangement.

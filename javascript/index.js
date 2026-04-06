@@ -1,6 +1,9 @@
-import {ArrayFromStorage, checkingForFrog, createCartItem, checkDone, saveEditCart, removeItem} from './cartFunctions.js';
+console.log("✅ index.js started running");
+
+import {ArrayFromStorage, checkingForFrog, createCartItem, checkDone, saveEditCart, removeItem} from './changeList.js';
 import { chooseCart } from "./arrangeList.js";
 
+console.log("✅ index.js started running");
 
 /*
 New layout
@@ -9,66 +12,17 @@ New layout
 
 Get list from storage (Not sure where to put this yet??)
 - Standard list
-- list current order
-
-Render List (create element so no reload?) (could be own function only file)
-- is checked or no?
-- is frog or no?
-- list html 
-
----- inputs
-
-buttons
-- sliders (condense with interpolation)
-- hide, add, tick, edit, delete
-- reorder buttons (make the process of highlighting selected button more efficient, also what brief explanation below to appear)
-
----- List CRUD functions + tick (not buttons) (could be own function only file)
-
-- create new item (blend with save edited somehow to condense code)
-- add to list
-- edit list item
-- delete list item
-- tick item
-
----- Other functions
-
-- ID maker
-- frog check
-- slider with interpolation function
-- how hard/slow/boring (for future display for sliders)
-
----- List reordering 
-
-- reorder depend on input factors (fun/boring/easy/hard/fast/slow)
-- Eat frog
-- Frog with chaser
-- snowball
-- One for me
-- Hump
-- As added
-
-*/
-
-
-
-
-// retrieve storage and ender html
-
-// Render html for user list
-
-// retrieve storage and ender html
+- list current order */
 
 export let currentCart = ArrayFromStorage('standardCart');
 
-console.log(localStorage.getItem('listOrder'))
-
 let choosenCart = chooseCart();
 
-
-console.log(choosenCart);
-
-console.log("hello");
+/*
+Render List (create element so no reload?) (could be own function only file)
+- is checked or no?
+- is frog or no?
+- list html */
 
 let listHTML = "";
 
@@ -77,15 +31,13 @@ choosenCart.forEach((item) => {
     let tickBox = "";
     if (item.completed == 1) {
         boxColour = "rgba(60, 255, 0, 0.38)";
-        tickBox = `<input class="tick-pic" type="image" src="./tick.png"></input>`;
+        tickBox = `<input class="tick-pic" type="image" src="../images/tick.png"></input>`;
     };
 
     let frogDisplay = ""
     if (item.frog == false) {
         frogDisplay = "no-frog";
     };
-
-
 
     listHTML +=
     `
@@ -102,7 +54,7 @@ choosenCart.forEach((item) => {
             <button class="edit js-edit" id="js-edit" data-edit ="${item.idNum}">edit</button>
             <button class="delete js-delete" id="delete js-delete" data-delete ="${item.idNum}">remove</button>
             
-            <img class="frog-pic ${frogDisplay}" src="../frogPic.png" >
+            <img class="frog-pic ${frogDisplay}" src="../images/frogPic.png" >
             <div class="invisible"></div>
             </div>
         </div>`
@@ -110,6 +62,13 @@ choosenCart.forEach((item) => {
 });
 
 document.querySelector(`.js-list-div`).innerHTML = listHTML;
+
+/*
+
+---- inputs
+
+buttons
+- sliders (condense with interpolation) */
 
 // sliders
 
@@ -169,6 +128,9 @@ editTimeSlider.oninput = function() {
     editTimeOutput.innerHTML = this.value;
 };
 
+/*
+- reorder buttons (make the process of highlighting selected button more efficient, also what brief explanation below to appear) 
+*/
 // Algo buttons
 
 document.querySelector(`.js-frog`)
@@ -217,9 +179,12 @@ document.querySelector(`.js-as-added`)
         let currentListOrder = "asAdded"
 
         localStorage.setItem('listOrder', currentListOrder);
-        // ass they were enter. done
+        // as they were entered. done
         window.location.reload();
     })
+
+/*
+- hide, add, tick, edit, delete */
 
 // button listeners (hide, add, tick, edit, delete)
 
@@ -343,3 +308,48 @@ document.querySelectorAll(`.js-delete`)
 
     
 });
+
+/* ---- List CRUD functions + tick (not buttons) (could be own function only file)
+
+- create new item (blend with save edited somehow to condense code)
+- add to list
+- edit list item
+- delete list item
+- tick item
+
+---- Other functions
+
+- ID maker
+- frog check
+- slider with interpolation function
+- how hard/slow/boring (for future display for sliders)
+
+---- List reordering 
+
+- reorder depend on input factors (fun/boring/easy/hard/fast/slow)
+- Eat frog
+- Frog with chaser
+- snowball
+- One for me
+- Hump
+- As added
+
+*/
+
+
+
+
+// retrieve storage and render html
+
+// Render html for user list
+
+// retrieve storage and render html
+
+
+
+
+
+
+
+
+

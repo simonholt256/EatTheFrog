@@ -1,7 +1,7 @@
 import { currentCart } from "./index.js";
-import { checkingForFrog } from "./cartFunctions.js";
+import { checkingForFrog } from "./changeList.js";
 
-
+/* ordering items standard */
 
 export function arrangeCart(cart, orderChoice) {
     if (orderChoice == "fun") {
@@ -45,7 +45,7 @@ export function arrangeCart(cart, orderChoice) {
 
 }
 
-// choosing cart
+/* choosing cart */
 
 export function chooseCart() {
     let selectedOrder = localStorage.getItem('listOrder');
@@ -70,7 +70,7 @@ export function chooseCart() {
     }
 }
 
-// advanced algos
+/* ording items advanced */
 
 // Eat the frog
 
