@@ -13,11 +13,11 @@ A smart to-do app that reorders tasks using difficulty, time, tedium as variable
 - Assign task attributes: Difficulty, Time required, Tediousness
 - Mark one task as your “frog” (most dreaded task)
 - Multiple task ordering strategies:
- - Eat the Frog – the most dreaded task first, then hardest to easiest
- - Frog with a Chaser – the most dreaded task first, then the funest, then hardest to easiest.
- - Snowball – start with the quickest task and go through to the slowest
- - One for Me, One for You – alternate between hard and easy tasks
- - Hump Method – start easy/quick and build to the worst and the middle and then end on easier ones again.
+  - Eat the Frog – the most dreaded task first, then hardest to easiest
+  - Frog with a Chaser – the most dreaded task first, then the funest, then hardest to easiest.
+  - Snowball – start with the quickest task and go through to the slowest
+  - One for Me, One for You – alternate between hard and easy tasks
+  - Hump Method – start easy/quick and build to the worst and the middle and then end on easier ones again.
 - Dynamic reordering of task list based on selected strategy
 - Check tasks as done as they are completed
 
