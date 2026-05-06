@@ -63,17 +63,19 @@ CSS
 JavaScript (Vanilla)
 
 ## Project Structure
+```bash
 project-root/
 │── css
-│──── styles.css
+│    │── styles.css
 │── html
-│──── index.html
+│    │── index.html
 │── images
-│── javasript
-│──── arrangeList,js
-│──── changeList.js
-│──── index.js
+│── javascript
+│    │── arrangeList,js
+│    │── changeList.js
+│    │── index.js
 │── README.md
+```
 
 ## Environment Variables
 No environment variables required.
